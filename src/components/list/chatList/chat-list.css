@@ -1,4 +1,6 @@
 .chat-list {
+  flex: 1;
+  overflow: scroll;
   .search {
     display: flex;
     align-items: center;
@@ -7,24 +9,63 @@
 
     .search-bar {
       flex: 1;
-      background-color: rgba(21, 21, 26, 0.318);
+      background-color: #e9ecef;
+      color: #6c757d;
       display: flex;
       align-items: center;
       gap: 20px;
       border-radius: 10px;
     }
 
-    img {
+    .search-bar::placeholder {
+      color: #495057;
+    }
+
+    .add, .search {
         width: 24px;
         height: 24px;
+        padding: 3px;
+        cursor: pointer;
+    }
+
+    .search {
+      cursor: default;
     }
 
     input {
         background-color: transparent;
         border: none;
         outline: none;
-        color: white;
         flex: 1;
+    }
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid black;
+    padding: 10px 20px 10px 20px;
+
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .texts {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-weight: 500;
+      }
+
+      p {
+        font-size: 14px;
+      }
     }
   }
 }
